@@ -1,0 +1,57 @@
+DESIGN DOC
+
+Design document for smart steel challenge 
+
+Overview
+
+Handle Python Backend data in front end. 
+
+Front end visualizes sensor data using Highcharts.
+
+Task 
+
+Task is to create intuitive page(s) that contain informative visualizations 
+of the provided data. Use HTML, JS and CSS to read the JSON and display it in an
+organized way. The aim of the page(s) and visualizations should be to explore 
+and understand the data for a statistical analysis.
+- You may use a charting library of your choice, preferably Highcharts.
+- You may use a user interface framework if you think it is necessary.
+- You may change the backend python application code
+- You should *not* change the task_data.csv file
+
+
+Additionally, please include a simple description document where you describe:
+    * your choices of libraries and frameworks (if any)
+    * your choice of the design language and its influences
+    * strengths of your design: What are the key points that separates your 
+            design from a standard approach?
+    * weaknesses of your design: What tradeoffs you had to make? What would you
+            like to change for a better result?
+
+
+
+Context
+React, Highcharts, Sass, Jest, Python
+
+
+Proposed Solution
+
+
+
+        
+
+Challenges
+
+   
+TODOS
+Test Python application
+modify Pyhton app to deliver to react app
+design app layout static content
+react Highchart plotting
+UI and styles
+responsive
+testing
+
+Steps to Run
+
+
