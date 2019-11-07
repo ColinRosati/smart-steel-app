@@ -1,6 +1,7 @@
 ### Data visualization App
+![alt text](https://github.com/ColinRosati1/smart-steel-app/blob/master/smart%20steel%20grab.PNG)
 
-###Overview
+### Overview
 
 Handle Python Backend data in front end. 
 Front end visualizes sensor data using Highcharts.
