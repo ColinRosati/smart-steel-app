@@ -7,13 +7,13 @@ function SteelApp() {
   const [apiData,setApiData] = useState({})
   const [errApi, setErrApi] = useState(false)
 
+  // async function to await sever response
   async function fetcherData() {
     const url = "http://127.0.0.1:7410/data"; // site that doesn’t send Access-Control-*
 
     fetch(url)
     .then( (response: any) => response.json())
-    //.then( data => setApiData(data)) // set data into state
-    .then( data => setApiData(Object.values(data)[0]))  
+    .then( data => setApiData(Object.values(data)[0]))   // only grab the nested object value
     .catch(err => setErrApi(true));
   }
 
@@ -23,6 +23,7 @@ function SteelApp() {
     fetcherData();
   },[])
 
+  // creata sensor variables
   const sns0 = Object.values(apiData)[2];
   const sns1 = Object.values(apiData)[3];
   const sns2 = Object.values(apiData)[4];
@@ -33,6 +34,9 @@ function SteelApp() {
   const sns7 = Object.values(apiData)[9];
   const sns8 = Object.values(apiData)[10];
   const sns9 = Object.values(apiData)[11];
+
+
+  //hight charts options
   const options = {
     title: {
       text: 'Sensor data'
@@ -86,16 +90,18 @@ chart:{
     align: 'center',
     verticalAlign: 'bottom',
     margin: 30,
-    width: 900,
-    maxHeight: 500,
-    padding:100,
+    width: 1300,
+    maxHeight: 400,
+    padding:70,
     borderWidth: 0,
     itemMarginTop: 15,
     itemMarginBottom: 15,
     backgroundColor:'#F6D7F9',
     itemStyle: {
             color: '#1D4DF8',
-            fontFamily: 'MuseoS500'
+            fontFamily: '',
+            fontSize:"18px",
+            padding:"20px"
     }
 },
     responsive: {
@@ -114,15 +120,15 @@ chart:{
   }
   }
 
-  console.log(apiData)
-  var snsrData = Object.values(apiData)[2]; 
-  console.log(snsrData)
-
-
   return (
+    <div>
+    <div className="Header">
+      <h1>Smart Steel</h1>
+      <h5>Data analytics for steel sensors. 400 samples taken on 10 sensors</h5>
+    </div>
     <div className="high-charts">
-    {/* <div className="sensor-api">{JSON.stringify(apiData)}</div> */}
     <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
     </div>
   );
 }
