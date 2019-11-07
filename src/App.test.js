@@ -22,22 +22,12 @@ test("fake test", () => {
 const res = fetchMock.mock('http://127.0.0.1:7410/data', 200);
 
 test("should expect API to return data", () => {
-    // act(() => {
     expect(res).toBeTruthy()
-        // });
 })
 
 
 // test API JSON obj contains correct data with 12 keys
 test("should expect API to JSON data with 12 keys", () => {
-    () => res.then((response: any) => response.json())
-        .then(data => {
-            let obj = Object.values(data)
-            expect(obj == 12).toBeTrue()
-        })
-})
-
-test("should expect highchart to have data in its options", () => {
     () => res.then((response: any) => response.json())
         .then(data => {
             let obj = Object.values(data)
