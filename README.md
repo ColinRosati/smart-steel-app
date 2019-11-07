@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Data visualization App
 
-## Available Scripts
+###Overview
 
-In the project directory, you can run:
+Handle Python Backend data in front end. 
+Front end visualizes sensor data using Highcharts.
 
-### `npm start`
+### Task 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Task is to create intuitive page(s) that contain informative visualizations 
+of the provided data. Use HTML, JS and CSS to read the JSON and display it in an
+organized way. The aim of the page(s) and visualizations should be to explore 
+and understand the data for a statistical analysis.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Context
+React, Highcharts, Sass, Jest, Python
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Proposed Solution
+I have decided to use react to handle the frontend for its use of states, builds,
+project management, testing capabilities. I enjoy the use of state and async states 
+in JS suitable for data visualization.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To handle the python flask endpoint I use a fetch call when my SteelApp component first mounts.
+Once data response is recieved it is passed through a series of async call to coerse data into JSON,
+set data into state and catch errors while trigger an error state as well as call the api function again.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To display the data I have used the suggested Highcharts as it is an elegant solution to style, display 
+interactive data. I have modified some of the Highcharts options to suit styling the data.
 
-### `npm run eject`
+In the end I have written a few unit tests for the API to make sure it returns data with the corrent amount
+of keys needed for all the sensors and data.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### The strengths of this design
+clean visualization
+quick component rendering
+modular components make for readability
+clearly defined state handling
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### weakness of design
+lacks interactivity in data visualization
+not responsive
+no integration testing
+lacks context for sensor data
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### TODOS
+Write highcharts into its own modular component.
+Add responsive styling of app.
+Interactive data visualization, zoom in, alternative displays, custom views
+Test react DOM compoents
+write e2e tests simulating DOM interactions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Steps to Run
+turn on server  python-server/ python -m main
+start react     npm start
 
-### Analyzing the Bundle Size
+app will open on localhost:5000/
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
