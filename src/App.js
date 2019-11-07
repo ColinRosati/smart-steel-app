@@ -7,8 +7,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <BodyApp/>
+      
       <SteelApp/>
+      <BodyApp/>
     </div>
   );
 }

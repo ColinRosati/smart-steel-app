@@ -96,7 +96,7 @@ function SteelApp() {
 
 
   return (
-    <div className="steel-app">
+    <div className="high-charts">
     {/* <div className="sensor-api">{JSON.stringify(apiData)}</div> */}
     <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
