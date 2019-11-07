@@ -4,21 +4,27 @@ import HighchartsReact from 'highcharts-react-official'
 
 function SteelApp() {
   let sensrData = ''
-  const [apiData,setApiData] = useState({})
-  const [errApi, setErrApi] = useState(false)
+  const [apiData,setApiData] = useState({}) // data state
+  const [errApi, setErrApi] = useState(false) // error state
 
   // async function to await sever response
   async function fetcherData() {
-    const url = "http://127.0.0.1:7410/data"; // site that doesn’t send Access-Control-*
+    const url = "http://127.0.0.1:7410/data"; // api url
 
-    fetch(url)
-    .then( (response: any) => response.json())
+    fetch(url) // call api endpoint
+    .then( (response: any) => response.json()) // coerse data into JSON
     .then( data => setApiData(Object.values(data)[0]))   // only grab the nested object value
-    .catch(err => setErrApi(true));
+    .catch(err => {// catch any error
+      setErrApi(true) // set error state
+      setApiData("Error Response")  // set error into data state
+      console.log("error api response try again") // print error in console
+      setTimeout(()=> fetcherData(),2000); // try api endpoint again
+    });
   }
 
   // on mount call fetch API 
   // set data into state
+  // wrap effect in subscribed to only call once. useful when testing
   useEffect(() => {
     let isSubscribed = true
       if (isSubscribed) {
@@ -125,6 +131,7 @@ chart:{
   }
   }
 
+  //render header & highcharts 
   return (
     <div>
     <div className="Header">
