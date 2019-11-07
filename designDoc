@@ -81,14 +81,11 @@ write e2e tests simulating DOM interactions.
 
 Steps to Run
 ----------------------
-turn on server  frontend/ python -m main
-start react     smart-steel-app/ npm start
+turn on server  python-server/ python -m main
+start react     npm start
 
 app will open on localhost:5000/
 
 
 
-Technical requirements
-----------------------
-note that git repo exists in smart-steel/smart-stee-app/ repo
 
