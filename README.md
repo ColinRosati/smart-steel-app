@@ -58,8 +58,14 @@ write e2e tests simulating DOM interactions.
 
 
 ### Steps to Run
-turn on server  python-server/ python -m main
-start react     npm start
+1. Create a virtualenv "venv" with 'python3 -m venv venv'. If you do not have
+    virtualenv python package installed, follow the installation manual:
+    https://virtualenv.pypa.io/en/stable/installation/
+2. Activate it with '. venv/bin/activate'
+3. Install the requirements with 'python-server/ pip install -r requirements.txt'
+4. Run the application with 'python-server/ python3 -m main'
+4. install dependencies react    'npm install'
+5. start react    'npm start'
 
 app will open on localhost:5000/
 
