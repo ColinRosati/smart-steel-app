@@ -39,11 +39,17 @@ function SteelApp() {
     },
     yAxis: {
       title: {
-          text: 'sensor data'
+          text: 'class'
       }
-  },
-   
-    series: [{
+  },xAxis: {
+    title: {
+        text: 'samples'
+    }
+},
+chart:{
+  height:800
+},
+  series: [{
       name: 'sensor 0',
       data: sns0
   }, {
@@ -74,10 +80,28 @@ function SteelApp() {
     name: 'sensor 9',
     data: sns9
   }],
+  legend: {
+    enabled: true,
+    y: 20,
+    align: 'center',
+    verticalAlign: 'bottom',
+    margin: 30,
+    width: 900,
+    maxHeight: 500,
+    padding:100,
+    borderWidth: 0,
+    itemMarginTop: 15,
+    itemMarginBottom: 15,
+    backgroundColor:'#F6D7F9',
+    itemStyle: {
+            color: '#1D4DF8',
+            fontFamily: 'MuseoS500'
+    }
+},
     responsive: {
       rules: [{
           condition: {
-              maxWidth: 500
+              maxWidth: 800
           },
           chartOptions: {
               legend: {
