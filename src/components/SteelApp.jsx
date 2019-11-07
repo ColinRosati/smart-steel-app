@@ -37,9 +37,43 @@ function SteelApp() {
     title: {
       text: 'Sensor data'
     },
+    yAxis: {
+      title: {
+          text: 'sensor data'
+      }
+  },
+   
     series: [{
-      data: sns0, sns1
-    }],
+      name: 'sensor 0',
+      data: sns0
+  }, {
+      name: 'sensor 1',
+      data: sns1
+  }, {
+    name: 'sensor 2',
+    data: sns2
+  }, {
+    name: 'sensor 3',
+    data: sns3
+  }, {
+    name: 'sensor 4',
+    data: sns4
+  }, {
+    name: 'sensor 5',
+    data: sns5
+  }, {
+    name: 'sensor 6',
+    data: sns6
+  }, {
+    name: 'sensor 7',
+    data: sns7
+  }, {
+    name: 'sensor 8',
+    data: sns8
+  }, {
+    name: 'sensor 9',
+    data: sns9
+  }],
     responsive: {
       rules: [{
           condition: {
@@ -63,7 +97,7 @@ function SteelApp() {
 
   return (
     <div className="steel-app">
-    <div className="sensor-api">{JSON.stringify(apiData)}</div>
+    {/* <div className="sensor-api">{JSON.stringify(apiData)}</div> */}
     <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
