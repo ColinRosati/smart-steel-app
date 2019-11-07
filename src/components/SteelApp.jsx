@@ -20,8 +20,13 @@ function SteelApp() {
   // on mount call fetch API 
   // set data into state
   useEffect(() => {
-    fetcherData();
+    let isSubscribed = true
+      if (isSubscribed) {
+        fetcherData()
+      }
+    return () => isSubscribed = false
   },[])
+
 
   // creata sensor variables
   const sns0 = Object.values(apiData)[2];
